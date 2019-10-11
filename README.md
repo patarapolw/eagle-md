@@ -1,29 +1,7 @@
 # eagle-markdown
 
-## Project setup
-```
-npm install
-```
+Also support a subset of Pug via [hyperpug](https://github.com/patarpolw/hyperpug).
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Example
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+See [/example.md](/example.md), and <https://patarapolw.github.io/eagle-markdown>.
