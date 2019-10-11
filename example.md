@@ -11,7 +11,7 @@ title: Eagle markdown
 
 --
 ```pug
-div Small text
+small Small text
 ```
 ===
 ```html

@@ -68,6 +68,12 @@ export default class EagleMarkdown extends Mixins(Slideshow) {
       }
     }
 
+    if (this.currentSlideIndex <= slideNumber) {
+      this.changeDirection("next");
+    } else {
+      this.changeDirection("prev");
+    }
+
     this.$nextTick(() => {
       this.currentSlideIndex = slideNumber + 1;
       this.$nextTick(() => {
@@ -143,5 +149,9 @@ export default class EagleMarkdown extends Mixins(Slideshow) {
     text-align: center;
     font-size: 8vh;
   }
+}
+
+small {
+  font-size: 3vh;
 }
 </style>
