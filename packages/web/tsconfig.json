@@ -12,8 +12,7 @@
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
-      "webpack-env",
-      "node"
+      "webpack-env"
     ],
     "paths": {
       "@/*": [
@@ -32,8 +31,7 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx",
-    "declaration.d.ts"
+    "tests/**/*.tsx"
   ],
   "exclude": [
     "node_modules"
