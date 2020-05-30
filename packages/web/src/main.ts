@@ -5,6 +5,14 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+Vue.component<{ template: string }>('raw', {
+  functional: true,
+  render: function (h, context) {
+    if (!context.props.template) return h()
+    return h(Vue.compile(context.props.template))
+  }
+})
+
 new Vue({
   router,
   store,
