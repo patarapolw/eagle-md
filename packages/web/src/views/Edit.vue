@@ -1,6 +1,6 @@
 <template lang="pug">
 .h-100.w-100
-  CodeMirror.h-100(ref="cm" v-model="raw" :options="cmOptions" @input="onCmCodeChange"
+  codemirror.h-100(ref="cm" v-model="raw" :options="cmOptions" @input="onCmCodeChange"
     :class="showPreview ? 'w-50' : 'w-100'")
   EagleMd.h-100.w-50(v-if="showPreview" :markdown="markdown" :line="line" :back-by-slide="true"
     :mouse-navigation="false" :keyboard-navigation="false" style="position: absolute; left: 50%; top: 0")
@@ -8,8 +8,8 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import { codemirror as CodeMirror } from 'vue-codemirror'
-import EagleMd from '@/components/EagleMd.vue'
+import { codemirror } from 'vue-codemirror'
+import EagleMd from '../components/EagleMd.vue'
 import { Matter } from '../assets/util'
 
 import 'codemirror/lib/codemirror.css'
@@ -33,7 +33,7 @@ import 'codemirror/theme/monokai.css'
 
 @Component({
   components: {
-    CodeMirror,
+    codemirror,
     EagleMd
   }
 })
@@ -75,6 +75,10 @@ export default class Edit extends Vue {
   }
 
   mounted () {
+    if (!this.$refs.cm) {
+      return
+    }
+
     this.codemirror.setSize('100%', '100%')
     this.codemirror.addKeyMap({
       'Cmd-P': () => { this.showPreview = !this.showPreview },

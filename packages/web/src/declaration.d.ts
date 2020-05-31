@@ -1,4 +1,6 @@
 declare module 'eagle.js'
+declare module 'vue-codemirror'
+declare module 'punycode'
 declare module 'markdown-it-emoji'
 declare module 'markdown-it-imsize'
 declare module 'markdown-it-container'

@@ -22,4 +22,16 @@ html, body {
   justify-content: center;
   align-items: center;
 }
+
+.h-100 {
+  height: 100%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-50 {
+  width: 50%;
+}
 </style>

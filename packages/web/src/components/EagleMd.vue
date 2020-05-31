@@ -6,12 +6,12 @@
 </template>
 
 <script>
-import eagle from 'eagle.js'
+import { Slideshow } from 'eagle.js'
 import MakeHtml from '../assets/make-html'
 import { Matter } from '../assets/util'
 
 export default {
-  mixins: [eagle.slideshow],
+  mixins: [Slideshow],
   props: {
     markdown: {
       default: '',
@@ -24,11 +24,11 @@ export default {
       slides: []
     }
   },
-  created () {
+  mounted () {
     const { header, content } = new Matter().parse(this.markdown)
     this.$set(this, 'header', header)
     this.$set(this, 'slides', content.split(/\n===\n/g, (s) => {
-      return new MakeHtml().render(s)
+      return new MakeHtml().render(s) || ''
     }))
   }
 }
